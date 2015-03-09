@@ -586,7 +586,7 @@ c-----------------------------------------------------------------------
   810 FORMAT(' Transition moment function defined by interpolating over'
      1  ,I4,' read-in points'/5x,'and approaching the asymptotic value',
      2  f12.6)
-  812 FORMAT(' Perform',I3,'-point piecewise polynomial interpolation ov
+  812 FORMAT(' Perform',I4,'-point piecewise polynomial interpolation ov
      1er',I5,' input points' )
   814 FORMAT(' Perform cubic spline interpolation over the',I5,' input p
      1oints' )
@@ -1033,18 +1033,18 @@ c-------------------------------------------------------------------
      2ts'//' Transition moment function:'/1x,9('==='))
   604 FORMAT(' Integrate from  RMIN=',f7.3,'  to  RMAX=',f7.2,
      1  '  with mesh  RH=',f9.6,'(Angst)'//' Potential #1 for ',A2,'(',
-     2  I3,')-',A2,'(',I3,')'/1x,32('='))
+     2  I4,')-',A2,'(',I4,')'/1x,32('='))
   605 FORMAT(/A78/40('==')/' Generate   ZMU=',F15.11,'(u)',
      1  '   &   BZ=',1PD16.9,'((1/cm-1)(1/Ang**2))'/
      2  10x,'from atomic masses:',0Pf16.11,'  & ',F16.11,'(u)')
-  606 FORMAT(' E(v=',i3,', J=',i3,')=',f10.3,'   Bv=',F11.7,
+  606 FORMAT(' E(v=',I4,', J=',I4,')=',f10.3,'   Bv=',F11.7,
      1  '  -Dv=',1PD12.4,'   Hv=',D12.4/8x,'   Lv=',D12.4,
      2  '   Mv=',D12.4,'   Nv=',D12.4,'   Ov=',D12.4)
   607 FORMAT(/' Solve for the',i4,' vibration-rotation levels of Potenti
-     1al-1:'/'   (v,J) =',6('  (',i3,',',i3,')':)/(10x,6('  (',i3,',',
-     2  i3,')':)))
+     1al-1:'/'   (v,J) =',6('  (',I4,',',I4,')':)/(10x,6('  (',I4,',',
+     2  I4,')':)))
  6607 FORMAT(/' Solve for',i4,' vibration-rotation levels of Potential-1
-     1 using Trial energies:'/(2x,3('   E(',I3,',',I3,') =',
+     1 using Trial energies:'/(2x,3('   E(',I4,',',I4,') =',
      2 F11.2:)))
   608 FORMAT(/' State-',I1,' electronic angular momentum  OMEGA=',I2/
      1  9x,'yields centrifugal potential  [J*(J+1) -',F5.2,']/r**2' )
@@ -1066,41 +1066,41 @@ c-------------------------------------------------------------------
   616 FORMAT(/' Matrix element arguments are powers of the squared inver
      1se distance  X = 1/r**',i1)
   617 FORMAT(/' Matrix element argument is fixed as a constant = 1')
-  618 FORMAT(' *** PROBLEM *** Searching for  v=',i3,' , J=',i3,
-     1 '  ALF only found to  v=',i3)
+  618 FORMAT(' *** PROBLEM *** Searching for  v=',I4,' , J=',I4,
+     1 '  ALF only found to  v=',I4)
   619 FORMAT(/' Find the',i4,' vibration-rotation levels:'/
      1  3('     v   J      E(v)   ')/3(2x,7('---')))
   620 FORMAT(/' An  n=',I2,'  N-D theory extrapolation from last 2 level
      1s implies   vD =',F8.3)
   621 FORMAT(5X,'with the',I4,' missing level(s) predicted to be:'/
      1  4('     v     E(v)   ')/4(4x,7('--')))
-  622 FORMAT(/' Search for highest bound  J=',i3,'  level finds  E(v=',
-     1  i3,') = VLIM -',1PD12.5/)
-  623 FORMAT(/' Find',I4,' Potential-1 vibrational levels with  J=',i3/
+  622 FORMAT(/' Search for highest bound  J=',I4,'  level finds  E(v=',
+     1  I4,') = VLIM -',1PD12.5/)
+  623 FORMAT(/' Find',I4,' Potential-1 vibrational levels with  J=',I4/
      1  4('     v     E(v)   ')/4(4x,7('--')))
-  624 FORMAT(4x,'Since the molecule is an ion with charge',SP,I3/6x,"use
+  624 FORMAT(4x,'Since the molecule is an ion with charge',SP,I4/6x,"use
      1 Watson's charge-adjusted reduced mass   mu = M1*M2/[M1 + M2 - (",
      2  i2,')*me]')
-  625 FORMAT(' For  J=',i3,', try to find the first',i4,' vibrational le
+  625 FORMAT(' For  J=',I4,', try to find the first',i4,' vibrational le
      1vels of Potential-1')
-  626 FORMAT(/' *** FAIL to find highest bound J=',i3,'  level from tria
+  626 FORMAT(/' *** FAIL to find highest bound J=',I4,'  level from tria
      1l   E = VLIM -',1PD11.4)
-  627 FORMAT(/' For vibrational level  v =',I3,'   of Potential-1'/
+  627 FORMAT(/' For vibrational level  v =',I4,'   of Potential-1'/
      1 1X,5('  J',6X,'E',7X)/1X,5(7('--'),2X))
-  628 FORMAT((1X,5(I3,F11.3,2X)))
+  628 FORMAT((1X,5(I4,F11.3,2X)))
   630 FORMAT((4(I6,F12.4:)))
   631 FORMAT((3(I6,I4,F13.5:)))
   632 FORMAT(1X,79('-'))
-  633 FORMAT(' **** Caution: Search for   v=',I3,'   J=',i3,
-     1  '  on potential-2 actually found   v=',I3)
+  633 FORMAT(' **** Caution: Search for   v=',I4,'   J=',I4,
+     1  '  on potential-2 actually found   v=',I4)
   634 FORMAT(/' Using the rotational selection rule:  delta(J)=',
-     1 i3,' to',i2,' with increment',i2/'   calculate matrix elements fo
+     1 I4,' to',i2,' with increment',i2/'   calculate matrix elements fo
      2r coupling to the',I4,' vibrational levels of'/
      3 '   Potential-2:   v =',14I4:/(21x,14i4:))
  6634 FORMAT(/' Using the rotational selection rule:  delta(J)=',
-     1 i3,' to',i2,' with increment',i2/'   calculate matrix elements fo
+     1 I4,' to',i2,' with increment',i2/'   calculate matrix elements fo
      2r coupling to the',I4,' vibrational levels of'/'   Potential-2 usi
-     3ng trial energies:',2('   E(',I3,')=',F9.2:)/4('   E(',I3,')=',
+     3ng trial energies:',2('   E(',I4,')=',F9.2:)/4('   E(',I4,')=',
      4 F9.2:))
   635 FORMAT(/' Get matrix elements between levels of Potential-1 (above
      1) & Potential-2 (below)'/1X,39('--')/' For Potential #2:'/
@@ -1109,13 +1109,13 @@ c-------------------------------------------------------------------
      1bove')
   637 FORMAT(/' *** Array Dimension OVERFLOW ***   (Number of J sublevel
      1s) > VIBMX=',i4)
-  638 FORMAT('   and automatically increment  J  in steps of',i3, ' to a
+  638 FORMAT('   and automatically increment  J  in steps of',I4, ' to a
      1 maximum value of',i4)
   641 FORMAT(1X,39('++'))
   644 FORMAT(/' *** Input data ERROR *** matrix element calculation need
-     1s  NLEV2=',i3,' > 0')
+     1s  NLEV2=',I4,' > 0')
   650 FORMAT(/' Matrix element argument is radial first derivative opera
-     1tor premultiplied by'/5x,'a power series in  r  of order',i3)
+     1tor premultiplied by'/5x,'a power series in  r  of order',I4)
   686 FORMAT(' Potential-',i1,' uses inner boundary condition of  zero v
      1alue  at  RMIN')
   688 FORMAT(' Potential-',i1,' uses symmetric-well inner boundary condi
@@ -1123,7 +1123,7 @@ c-------------------------------------------------------------------
   703 FORMAT(1X,I4,I5,F13.4,G13.5)
   723 FORMAT(/A78/1x,'Output values of:  v, J, E & (Level Width)')
   724 FORMAT(//A78//'   v   J    E(v,J)     Width       <KE>',
-     1  6x,'<M(r)>  &  <XI**k>  for k=1 to',i3/2x,38('=='))
+     1  6x,'<M(r)>  &  <XI**k>  for k=1 to',I4/2x,38('=='))
   725 FORMAT(//A78//"   v'  J'",'  v"  J"     FREQ',"    <v',J'| XI**k",
      1  ' |v",J">  for  k=0  to  MORDR=',i2/2x,37('=='))
   824 FORMAT(//A78/30('==')/" Note that (v',J') &",' (v",J") strictly la
@@ -1261,9 +1261,9 @@ c** Redefine Surkus-type distance variable RFN using new RREF
           ENDDO
       IF(DABS(DRT/RREF).GE.1.D-12) GO TO 2
    99 RETURN
-  600 FORMAT(' E(v=',i3,', J=',i3,')=',f11.3,'   <M(r)>=',G18.10,
+  600 FORMAT(' E(v=',I4,', J=',I4,')=',f11.3,'   <M(r)>=',G18.10,
      1  '   <KE>=',F11.3)
-  602 FORMAT(' E(v=',i3,', J=',i3,')=',f11.3,'   <M(r)>=',G18.10,
+  602 FORMAT(' E(v=',I4,', J=',I4,')=',f11.3,'   <M(r)>=',G18.10,
      1 '   <KE>=',F11.3/'   Tunneling predissociation  Width(FWHM)=',
      2 G13.6,'    <X**',I2,'>=',F13.8)
   604 FORMAT((8x,3('   <X**',I2,'>=',F13.8:)))
@@ -1406,8 +1406,8 @@ cc811 FORMAT(F12.4,2I4,I6,I4,3f12.4,1PD15.6)
 c    1         WRITE(7,701) KVUP,JUP,KVLW,JLW,(ZMAT(J),J=0,MORDR)
      1         WRITE(7,701) KVUP,JUP,KVLW,JLW,FREQ,(ZMAT(J),J=0,MORDR)
       RETURN
-  600 FORMAT(' Coupling   E(v=',I3,', J=',I3,')=',F12.4,'   to   E(v=',
-     1 I3,', J=',I3,')=',F12.4)
+  600 FORMAT(' Coupling   E(v=',I4,', J=',I4,')=',F12.4,'   to   E(v=',
+     1 I4,', J=',I4,')=',F12.4)
   602 FORMAT(5x,'Moment matrix elements:',2('   <X**',I2,'>=',F14.10:),
      1  1x/(3x,3('   <X**',I2,'>=',F14.10:),1x))
   604 FORMAT(' FCF=',1PD11.4,'   <M>=',D12.5,'   dE=',0PF12.4,
@@ -1415,8 +1415,8 @@ c    1         WRITE(7,701) KVUP,JUP,KVLW,JLW,(ZMAT(J),J=0,MORDR)
   606 FORMAT(1X,79('+'))
   701 FORMAT(4I4,F12.4,4F12.8:/(4X,6F12.8))
 c 701 FORMAT(4I4,6F12.8:/(16X,6F12.8))
-  801 FORMAT(1x,A1,'(',I3,')  ',I3,' -',I3,F10.2,F12.4,3(1PD13.5))
-  802 FORMAT(i2,'(',I3,')  ',I3,' -',I3,F10.2,F11.2,3(1PD14.5))
+  801 FORMAT(1x,A1,'(',I4,')  ',I4,' -',I4,F10.2,F12.4,3(1PD13.5))
+  802 FORMAT(i2,'(',I4,')  ',I4,' -',I4,F10.2,F11.2,3(1PD14.5))
       END
 c23456789 123456789 123456789 123456789 123456789 123456789 123456789 12
 
@@ -2401,7 +2401,7 @@ c** Special case: insert common name for deuterium or tritium
           ENDIF
       RETURN
   601 FORMAT(' *** MASSES Data base does not include Atomic Number=',i4)
-  602 FORMAT(' *** MASSES Data base does not include ',A2,'(',i3,
+  602 FORMAT(' *** MASSES Data base does not include ',A2,'(',I4,
      1 '), so use average atomic mass.')
       END
 c23456789 123456789 123456789 123456789 123456789 123456789 123456789 12
@@ -3130,7 +3130,7 @@ c-----------------------------------------------------------------------
   603 FORMAT(/' Solve by matching inward and outward solutions at the'/
      1  5x,'innermost turning point   R1 = R(M)')
   605 FORMAT(/'  *** ALF WARNING ***')
-  606 FORMAT(4x,'Next estimated trial energy  E(v=',I3,') =',G15.8/4X,
+  606 FORMAT(4x,'Next estimated trial energy  E(v=',I4,') =',G15.8/4X,
      1  'lies above potential maximum  VMAX =',G15.8)
   607 FORMAT(4X,'Potential found to have a second minimum.')
   610 FORMAT(/'  *** ALF ERROR ***')
@@ -3140,7 +3140,7 @@ c-----------------------------------------------------------------------
      1ALF array dimension  NVIBMX=',i4)
   614 FORMAT(/'  *** ALF ERROR ***   Unable to find a potential minimum
      1 for   J=',i4)
-  615 FORMAT(4X,'There are',I3,'  potential ',A6,' in this potential. St
+  615 FORMAT(4X,'There are',I4,'  potential ',A6,' in this potential. St
      1op searching after 10.')
   616 FORMAT(4X,'The potential turns over in the short range region at R
      1 = ',G15.8)
@@ -3150,25 +3150,25 @@ c-----------------------------------------------------------------------
   620 FORMAT(4X,'Use of energy ',I1,'0% up the potential well (E =',
      1G15.8,')'/4X,' fails to produce a viable vibrational eigenstate.')
   621 FORMAT(4X,'Use of differences to estimate the energy for the next'
-     1/4X,' vibrational level (v=',I3,') failed after',I3,'  attempt.')
-  622 FORMAT(4X,'After',I3,' tries to harmonically estimate the zero-poi
+     1/4X,' vibrational level (v=',I4,') failed after',I4,'  attempt.')
+  622 FORMAT(4X,'After',I4,' tries to harmonically estimate the zero-poi
      1nt energy,'/4X,' initial trial energy',G15.8,'   had yielded   E(v
-     2=',I3,') =',G15.8)
-  623 FORMAT(4X,'Expecting to find level (v=',I3,') but found level (v='
-     1,I3,')')
-  624 FORMAT(4X,'After',I3,' tries, failed to interpolate trial energy b
-     1etween'/4X,'E(v=',I3,') =',G15.8,'   and   E(v=',I3,') =',G15.8)
-  626 FORMAT(4X,'The highest calculated level is  E(v=',I3,') =',G15.8)
+     2=',I4,') =',G15.8)
+  623 FORMAT(4X,'Expecting to find level (v=',I4,') but found level (v='
+     1,I4,')')
+  624 FORMAT(4X,'After',I4,' tries, failed to interpolate trial energy b
+     1etween'/4X,'E(v=',I4,') =',G15.8,'   and   E(v=',I4,') =',G15.8)
+  626 FORMAT(4X,'The highest calculated level is  E(v=',I4,') =',G15.8)
   630 FORMAT(/' ALF successfully finds all vibrational levels up to   v=
-     1 KVMAX=',I3)
-  640 FORMAT(/' ALF finds all  J=',i3,'  vib. levels below  vD=',F7.3,
+     1 KVMAX=',I4)
+  640 FORMAT(/' ALF finds all  J=',I4,'  vib. levels below  vD=',F7.3,
      1  '  estimated by N-D theory')
-  650 FORMAT(/' There were',I3,'  potential minima found with the absolu
+  650 FORMAT(/' There were',I4,'  potential minima found with the absolu
      1te minimum'/4X,'VMIN =',G15.8,'  cm-1.')
-  651 FORMAT(/' There were',I3,'  potential maxima found with the absolu
+  651 FORMAT(/' There were',I4,'  potential maxima found with the absolu
      1te maximum'/4X,'VMAX =',G15.8,'  cm-1.')
   666 FORMAT(4X,'Undefined case for automatic search.'/,4X,'Values of KV
-     1 =',I3,'  and NF =',I3)
+     1 =',I4,'  and NF =',I4)
  2100 FORMAT(/1X,39('=='))
  2101 FORMAT(/1X,39('--'))
  2110 FORMAT(/' Limits and increment of integration (in Angstroms):'
@@ -3180,7 +3180,7 @@ c-----------------------------------------------------------------------
  2112 FORMAT(/' Calculating properties of the potential described above.
      1 '/' Use Airy function at 3-rd turning point as outer boundary'
      2 /' condition for quasibound levels.')
- 2113 FORMAT(' v=',I3,4X,'v(',A5,')=',I3,4X,'Gv=',F16.9,4X,'Bv=',F16.12)
+ 2113 FORMAT(' v=',I4,4X,'v(',A5,')=',I4,4X,'Gv=',F16.9,4X,'Bv=',F16.12)
  2114 FORMAT(/' Found',I4,' level(s) in the inner well and',I4,' level(s
      1) in the outer well.')
       END
@@ -3768,51 +3768,51 @@ c** ERROR condition if  E.gt.V(R)  at outer end of integration range.
 c** Return in error mode
   999 KV= -1
       RETURN
-  601 FORMAT(/' Solve for  v=',I3,'   J=',I3,'   ETRIAL=',1PD15.7,
+  601 FORMAT(/' Solve for  v=',I4,'   J=',I4,'   ETRIAL=',1PD15.7,
      1   '  INNER=',i2,'   WF(1st) WF(NEND)' )
   602 FORMAT(' ITER    ETRIAL',8X,'F(E)      DF(E)     D(E)',
      1 5X,'M    R(M)  /WF(M)   /WF(M)  R(NEND) NBEG ITP1'/
      2  1X,96('-'))
   603 FORMAT(I4,1PD15.7,3D10.2,I5,0PF7.3,1P2D9.1,0PF8.2,I4,I5)
-  604 FORMAT('   NOTE:  for  J=',I3,'   EO=',F12.4,' .ge. V(',i3,')=',
+  604 FORMAT('   NOTE:  for  J=',I4,'   EO=',F12.4,' .ge. V(',I4,')=',
      1  F12.4)
-  605 FORMAT(/' Solution of radial Schr. equation for   E(v=',I3,',J=',
-     1  I3,') =',F15.7/2x,4('    R(I)   WF(I)   ')/2X,38('--') )
+  605 FORMAT(/' Solution of radial Schr. equation for   E(v=',I4,',J=',
+     1  I4,') =',F15.7/2x,4('    R(I)   WF(I)   ')/2X,38('--') )
   606 FORMAT(2X,4(F8.3,F11.7))
-  607 FORMAT('E(v=',I3,',J=',I3,')=',F11.4,1x,I3,' Iterations',
+  607 FORMAT('E(v=',I4,',J=',I4,')=',F11.4,1x,I4,' Iterations',
      1  '   R(M)=',F6.3,'  WF(NBEG)/WF(M)=',1PD8.1/
      2  57x,'WF(NEND)/WF(M)=',D8.1)
   608 FORMAT(' *** SCHRQ Error:  E=',F9.2,' > V(',I5,')=',F9.2,
      1  '  at  Rmax=',F6.2,'  for  IT=',I2)
-  609 FORMAT(' *** For  J=',I3,'   E=',1PD15.7,"  integration can't",
+  609 FORMAT(' *** For  J=',I4,'   E=',1PD15.7,"  integration can't",
      1 ' start till past mesh'/37x,'point',I5,',  so RMIN smaller than n
      2eeded')
   610 FORMAT(/' Attempt to find the highest bound level starting from',
      1 '   ETRIAL =',1PD9.2)
-  611 FORMAT(' *** SCHRQ inward search at   J=',i3,'   E=',f11.2,
+  611 FORMAT(' *** SCHRQ inward search at   J=',I4,'   E=',f11.2,
      1  ' finds no classical region')
-  612 FORMAT(/' *** ERROR *** for   v =',I3,'   J =',I3,'   E =',
+  612 FORMAT(/' *** ERROR *** for   v =',I4,'   J =',I4,'   E =',
      1  F12.4,'  Innermost turning point not found by   M = MSAVE =',I5)
   613 FORMAT(/' *** ERROR in potential array ... V(I) everywhere',
      1 ' too big to integrate with given  increment')
-  614 FORMAT(' *** CAUTION *** For  J=',I3,'  E=',G15.8/16x,
+  614 FORMAT(' *** CAUTION *** For  J=',I4,'  E=',G15.8/16x,
      1 'WF(first)/WF(Max)=',D9.2,'  suggests  RMIN  may be too large')
-  615 FORMAT(' ** CAUTION ** For  J=',I3,'  E=',1PD13.6,
+  615 FORMAT(' ** CAUTION ** For  J=',I4,'  E=',1PD13.6,
      1 '  WF(NEND)/WF(Max)=',D8.1,' >',D8.1/4X,'& initialization ',
      2 'quality test ',1PD8.1,' > 1.D-3   so RMAX may be too small')
-  616 FORMAT(' ** WARNING *** For  v=',I2,', J=',I3,' at  E=',G14.7,
+  616 FORMAT(' ** WARNING *** For  v=',I2,', J=',I4,' at  E=',G14.7,
      1  ':  inward propagation finds no turning point ... Energy too low
      2 or potential too weak' )
   617 FORMAT(' *** SCHRQ has a convergence problem, so for  IT=',I2,
      1 '  cut  DE=',1PD10.2,'  in HALF' )
-  618 FORMAT(' *** For  J=',I3,'  E=',F9.2,'  JWKB start gives  SB/SI=',
+  618 FORMAT(' *** For  J=',I4,'  E=',F9.2,'  JWKB start gives  SB/SI=',
      1  1PD10.3,'  so use a node.')
   619 FORMAT(1X,96('-'))
-  620 FORMAT(' *** CAUTION for  v=',I3,'  J=',I3,"  SCHRQ doesn't conver
+  620 FORMAT(' *** CAUTION for  v=',I4,'  J=',I4,"  SCHRQ doesn't conver
      1ge by  ITER=",I2,'  DE=',1PD9.2)
-  701 FORMAT(/2x,'Level  v=',I3,'   J=',I3,'   E=',F12.4,' ,  wave funct
+  701 FORMAT(/2x,'Level  v=',I4,'   J=',I4,'   E=',F12.4,' ,  wave funct
      1ion at',I6,' points.'/7x,'R(1-st)=',F12.8,'   mesh=',F12.8,
-     2  '   NBEG=',I4,'   |LPRWF|=',I3)
+     2  '   NBEG=',I4,'   |LPRWF|=',I4)
   702 FORMAT((1X,4(f9.4,f10.6)))
       END
 c23456789 123456789 123456789 123456789 123456789 123456789 123456789 12
@@ -3929,12 +3929,12 @@ c** End of quasibound level initialization schemes.
   100 RETURN
   604 FORMAT(" **** QBOUND doesn't work ... no classically allowed regio
      1n accessible at this energy.")
-  606 FORMAT(' *** CAUTION ***  v=',I3,'   J=',I3,'   E=',1PD13.6,
+  606 FORMAT(' *** CAUTION ***  v=',I4,'   J=',I4,'   E=',1PD13.6,
      1 '   IT=',I2/5x,'Airy initialization unstable so use  zero slope',
      2 'at  R(3-rd)' )
-  607 FORMAT(' *** For  J=',I3,'  E=',F9.2,
+  607 FORMAT(' *** For  J=',I4,'  E=',F9.2,
      1  '  R(3-rd) > RMAX  & E < V(N)  so try WKB B.C. @ RMAX')
-  608 FORMAT(' For J=',I3,'  ETRY=',F11.4,' > VMAX=',F11.4,
+  608 FORMAT(' For J=',I4,'  ETRY=',F11.4,' > VMAX=',F11.4,
      1  '  find onee turn point:  R=',F6.2)
       END
 c23456789 123456789 123456789 123456789 123456789 123456789 123456789 12
@@ -4120,18 +4120,18 @@ c  Le Roy & Liu in J.C.P.69,3622(1978).
   250 RETURN
   601 FORMAT('    Lifetime=',1PD10.3,'(s)   Width=',D10.3,'   dG/dv=',
      1 0PF7.2,'   V(max)=',F9.2)
-  602 FORMAT(' *** WARNING ***  For   v =',I3,'   J =',I3,'   cannot cal
+  602 FORMAT(' *** WARNING ***  For   v =',I4,'   J =',I4,'   cannot cal
      1culate width since barrier maximum beyond range')
-  603 FORMAT(' *** For  J=',I3,'  E=',F9.2,'  R(3-rd) beyond range so tu
+  603 FORMAT(' *** For  J=',I4,'  E=',F9.2,'  R(3-rd) beyond range so tu
      1nneling calculation uses'/8X,'pure centrifugal potential with  J(a
      2pp)=',F7.2,'  for  R > R(max)=',F7.2)
   605 FORMAT(' **** CAUTION *** Width estimate only qualitative, as have
-     1 a double-minimum well for   E(v=',I3,', J=',I3,')=',F15.7/15X,
+     1 a double-minimum well for   E(v=',I4,', J=',I4,')=',F15.7/15X,
      2 'a more stable result may be obtained by searching for the quasib
      3ound levels using option: INNER > 0 .')
   609 FORMAT(' *** CAUTION - Permeability estimate not exact as have a d
-     1ouble-humped barrier:  E(v=',I3,', J=',I3,') =',G15.8,I6)
-  610 FORMAT(16X,'(NOTE: this has the node count of a   v=',I3,2X,A5,
+     1ouble-humped barrier:  E(v=',I4,', J=',I4,') =',G15.8,I6)
+  610 FORMAT(16X,'(NOTE: this has the node count of a   v=',I4,2X,A5,
      1 '-well level')
   611 FORMAT(12X,'Log10(lifetime/sec)=',F10.5,' ;   Log10(width/cm-1)=',
      1 F10.5,'   Spacing=',G12.5,'   V(max)=',G14.7,'(cm-1)')
@@ -4491,7 +4491,7 @@ c  calculated by differences, assuming equally spaced RR(I) values.
      1',F12.4,'(cm-1)')
   602 FORMAT(/' **** ERROR in dimensioning of arrays required'
      1 ,' by GENINT;   No. input points ',I5,' > NTPMX =',I4)
-  604 FORMAT(' Perform',I3,'-point piecewise polynomial interpolation ov
+  604 FORMAT(' Perform',I4,'-point piecewise polynomial interpolation ov
      1er',I5,' input points' )
   606 FORMAT(' Perform cubic spline interpolation over the',I5,
      1  ' input points' )
@@ -4940,13 +4940,13 @@ c    1  (3X,3(F10.5,G15.7)))
   616 FORMAT(' Function for  X .GE.',F8.4,'   generated as'/'   Y=',
      1 F12.4,' - (',1PD13.6,') * r**',0PF10.6,'  * exp{-(',F11.6,'*r)}')
   618 FORMAT(' Extrapolate to  X .GE.',F8.4,'  using'/'   Y=',
-     1  F12.4,SP,1PD15.6,'/X**(',SS,D13.6,')] ,  yielding   NCN=',I3)
+     1  F12.4,SP,1PD15.6,'/X**(',SS,D13.6,')] ,  yielding   NCN=',I4)
   620 FORMAT(' Extrapolate to  X .GE.',F8.4,'  using'/'   Y=',
      1  F12.4,' - [',1PD13.6,'/X**',I1,SP,D14.6,'/X**',SS,I1,']')
   622 FORMAT(' Extrapolate to  X .GE.',F8.4,'  using'/
      1  '   Y=',F12.4,' - [',1PD13.6,'/X**',I1,SP,D14.6,'/X**',
      2  SS,I1,SP,D14.6,'/X**',SS,I2,']')
-  624 FORMAT(' Function for  X .GE.',F7.3,'  generated by',I3,
+  624 FORMAT(' Function for  X .GE.',F7.3,'  generated by',I4,
      1 '-point inverse-power interpolation'/'   with leading term  1/r**
      2',I1,'  relative to dissociation limit   YLIM=',F11.3)
   626 FORMAT('   and (dimensionless) leading coefficient fixed as   C',
@@ -5039,7 +5039,7 @@ c** Finally, convert polynomial coefficients to derivatives at RR.
   101 WRITE(6,601) NCFT,NCFT,NPT
       STOP
   601 FORMAT(/' *** Dimensioning ERROR in PLYINTRP :  either   (NCFT=',
-     1  I2,' .GT. 20)   or   (NCFT=',I2,' .GT. NPT=',I3,')')
+     1  I2,' .GT. 20)   or   (NCFT=',I2,' .GT. NPT=',I4,')')
       END
 c23456789 123456789 123456789 123456789 123456789 123456789 123456789 12
 
@@ -5962,11 +5962,11 @@ c ... finally, accumulate overall BOB terms ... all at the same time!
      1  F10.3,'[cm-1]    Re=',F12.8,'[A]')
   598 FORMAT(3x,'with exponent an order-',i2,' polynomial in   y',I1,
      1 '= 2*(r**',i1,' - Re**',i1,')/(r**',i1,' + Re**',i1,')'/
-     2 '   with',i3,' coefficients:',1PD16.8,2D16.8:/(8x,4D16.8:))
+     2 '   with',I4,' coefficients:',1PD16.8,2D16.8:/(8x,4D16.8:))
   596 FORMAT(5x,'and for   r <',f8.4,'   extrapolate inward linearly')
   603 FORMAT(3x,'with exponent an order-',i2,' polynomial in   y',I1,
      1 ' = (r**',i1,' - Re**',i1,')/(r**',i1,' + Re**',i1,')'/
-     2 '   with',i3,' coefficients:',1PD16.8,2D16.8:/(8x,4D16.8:))
+     2 '   with',I4,' coefficients:',1PD16.8,2D16.8:/(8x,4D16.8:))
   604 FORMAT(' exponent switching function yields limiting  C',i1,
      1 '/r**',i1,'  with  C_',i1,'=',1PD14.7/10x,'defined by   A_sw=',
      2  0Pf10.6,'   R_sw=',f10.6)
@@ -5976,38 +5976,38 @@ c ... finally, accumulate overall BOB terms ... all at the same time!
   606 FORMAT(/' Potential is a simple Morse function with   De =',F11.4,
      1  '    Re =',F12.9/39x,'and   beta =',F13.10,' [1/Angstroms]')
   607 FORMAT('   with  beta(y',i1,')= beta{INF}*y',i1,' + [1-y',i1,
-     1 ']x{order-',i2,' polynomial in y',i1,'}'/'   with',i3,
+     1 ']x{order-',i2,' polynomial in y',i1,'}'/'   with',I4,
      2 ' coefficients:',1PD16.8,2D16.8:/(8x,4D16.8:))
   608 FORMAT(/' Potential is an  EMO_',i1,'  with   De=',F11.4,
      1 '    Re=',F12.9/3x,'Exponent factor is order-',i2, ' power series
      2 in  y=(r**',i1,' - Re**',i1,')/(r**',i1,' + Re**',i1,')'/
-     3 '   with',I3,' coefficients:',1x,1PD18.9,2D18.9:/(7X,4D18.9:))
+     3 '   with',I4,' coefficients:',1x,1PD18.9,2D18.9:/(7X,4D18.9:))
   609 FORMAT('   where for  r < Re  polynomial order is truncated to ord
      1er   NSR=',i2,'   with')
   610 FORMAT(/' Potential is Generalized Morse Oscillator with   De=',
-     1 F10.3,'   Re=',F11.8/4x,'Exponent factor "beta" is',i3,' order po
+     1 F10.3,'   Re=',F11.8/4x,'Exponent factor "beta" is',I4,' order po
      2wer series in (r-Re) with coefficients:'/4x,1PD18.9,3D18.9:/
      3 (4X,4D18.9:))
   611 FORMAT('   where for  r < Re  polynomial order is truncated to ord
      1er   NSR=',i2) 
   612 FORMAT(/' Potential is a Dunham expansion in  (r-Re)/(',f5.2,
      1  ' * Re)  with   Re=',f12.9/'  V(Re)=',f12.4,'    a0=',1PD16.9,
-     2  '   and',i3,'  a_i coefficients:'/(5D16.8))
+     2  '   and',I4,'  a_i coefficients:'/(5D16.8))
   613 FORMAT(6x,'y',i1,'= (r**',i1,' - Re**',i1,')/(r**',i1,' + Re**',
      1 i1,')     where   phiINF=',F12.8,'   and'/  '   uLR(r) is a sum o
-     2f',I3," term(s) with coefficients (+'ve if attractive):"/
+     2f',I4," term(s) with coefficients (+'ve if attractive):"/
      3 (3x,3(5x,'C',i2,' =',1PD14.6:)))
   614 FORMAT(/' Potential is an SPF expansion in  (r-Re)/(',F5.2,
      1  '* r)  with   Re=',f12.9/5x,'De=',g18.10,'   b0=',
-     2  1PD16.9,'   and',i3,'  b_i  coefficients:'/(5D16.8))
+     2  1PD16.9,'   and',I4,'  b_i  coefficients:'/(5D16.8))
   616 FORMAT(/' Potential is an O-T expansion in  (r-Re)/[',f5.2,
      1  '*(r+Re)]  with   Re=',f12.9/5x,'De=',G18.10,
-     2  '   c0=',1PD16.9,'   and',i3,'  c_i coefficients:'/(5D16.8))
+     2  '   c0=',1PD16.9,'   and',I4,'  c_i coefficients:'/(5D16.8))
   618 FORMAT(/' Potential is a general GPEF expansion in  (r**',i1,
      1  ' - Re**',i1,')/(',SP,F5.2,'*r**',SS,i1,SP,F6.2,'*Re**',SS,i1,
      2  ')'/5x,'with   Re=',f12.9,'   De=',g18.10,'   g0=',1PD16.9/
-     3  5x,'and',i3,'  g_i coefficients:  ',3D16.8/(5D16.8:))
-  620 FORMAT(/' Potential is a power series in  r  of  order',i3,
+     3  5x,'and',I4,'  g_i coefficients:  ',3D16.8/(5D16.8:))
+  620 FORMAT(/' Potential is a power series in  r  of  order',I4,
      1 ' with   V(r=0)=',f11.4/3x,'& coefficients (from linear term):',
      2 1P2d16.8:/(5x,4D16.8:))
   622 FORMAT(/' *** ERROR in generating HFD potential *** generate   ALF
@@ -6020,33 +6020,33 @@ c ... finally, accumulate overall BOB terms ... all at the same time!
      1  '     Damping function  D(r)= exp[ -',0Pf6.4,'*(',f7.4,
      1  '/X -1.0)**',f5.2,']')
   630 FORMAT(/' BOB adiabatic potential correction for atom-',I1,
-     1 '  of mass ',f15.11/'   consists of mass factor  [1- MASS(',I3,
-     2 A2,')/MASS(',I3,A2,')]  multiplying all of:'/5x,'u',i1,'INF=',
+     1 '  of mass ',f15.11/'   consists of mass factor  [1- MASS(',I4,
+     2 A2,')/MASS(',I4,A2,')]  multiplying all of:'/5x,'u',i1,'INF=',
      3 f11.6,'  times  y',i1,'= [(r**',i1,' - Re**',i1,')/(r**',i1,
-     4 ' + Re**',i1,')]'/5x,'plus  [1 - y',i1,']  times an order',I3,
+     4 ' + Re**',i1,')]'/5x,'plus  [1 - y',i1,']  times an order',I4,
      5 ' polynomial in'/7x,'y',i1,'=[(r**',i1,' - Re**',i1,')/(r**',i1,
-     6 ' + Re**',i1,')]  with the ',i3,' coefficients:'/(3x,4G17.9:))
+     6 ' + Re**',i1,')]  with the ',I4,' coefficients:'/(3x,4G17.9:))
   632 FORMAT(/' BOB adiabatic potential correction for atom-',I1,
      1  '  of mass ',f15.11/'   consists of mass factor  m{electron}*[1/
-     2MASS(',I3,A2,') - 1/MASS(',I3,A2,')]'/5x,'multiplying   u',i1,
+     2MASS(',I4,A2,') - 1/MASS(',I4,A2,')]'/5x,'multiplying   u',i1,
      3 'INF=',1PD17.9,'  times [1 - fsw(r)/fsw(Re)]'/'   plus  fsw(r)  t
-     4imes an order',0P,i3,' polynomial in z{Dun} with coefficients:' / 
+     4imes an order',0P,I4,' polynomial in z{Dun} with coefficients:' / 
      5  (3x,1P4D17.9:)) 
   634 FORMAT(/' BOB centrifugal correction for atom-',I1,'  of mass ',
-     1 f15.11/3x,'consists of mass factor  [MASS(',I3,A2,')/MASS(',I3,
+     1 f15.11/3x,'consists of mass factor  [MASS(',I4,A2,')/MASS(',I4,
      2 A2,')]  multiplying all of:'/5x,'q',i1,'INF=',F11.6,' times  y',
      3 i1,'= [(r**',i1,' - Re**',i1,')/(r**',i1,' + Re**',i1,')]'/
-     4 5x,'plus [1 - y',i1,'] times an order',I3,' polynomial in y',i1,
-     5 ' with the',i3,' coefficients:'/(3x,4G17.9:))
+     4 5x,'plus [1 - y',i1,'] times an order',I4,' polynomial in y',i1,
+     5 ' with the',I4,' coefficients:'/(3x,4G17.9:))
   636 FORMAT(3x,'where   fsw(r) = 1/[1 + exp{',f7.4,'*(r -',f7.4,')}]')
   638 FORMAT(/' BOB centrifugal correction for atom-',I1,'  of mass ',
-     1 f15.11/3x,'consists of mass factor   [mass{electron}/MASS(',I3,
+     1 f15.11/3x,'consists of mass factor   [mass{electron}/MASS(',I4,
      2 A2,')]'/'   multiplying   q',i1,'INF=',1PD17.9,'  times [1 - fsw(
-     3r)/fsw(Re)]'/ '   plus  fsw(r)  times an order',0P,i3,' polynomial
+     3r)/fsw(Re)]'/ '   plus  fsw(r)  times an order',0P,I4,' polynomial
      4 in z{O-T} with coefficients:'/ (3x,4G17.9:)) 
   640 FORMAT(/' Tiemann-type potential with   De=',F11.4,'   Rm=',f9.6,
      1 '   is a power series'/10x,'in  (r - Re)/(r ',SP,F9.5,
-     2 '*Re) of order',SS,I3,'  with the',I3,' coefficients:'/(5D16.8))
+     2 '*Re) of order',SS,I4,'  with the',I4,' coefficients:'/(5D16.8))
 c 642 FORMAT(' where for  r < Rinn=',F7.4,'   V=',1PD13.6,'*exp[-',
 c    1  0PF9.6,'*(r - Rinn)] ',SP,F10.3)
   642 FORMAT(' where for  r < Rinn=',F7.4,'   V=',SP,F12.4,1x,1PD13.6,
@@ -6055,11 +6055,11 @@ c    1  0PF9.6,'*(r - Rinn)] ',SP,F10.3)
      1 (SP,1PD14.6,'/r**',SS,I2):/(39x,SP,1PD14.6,'/r**',SS,I2))
   650 FORMAT(/' DELR(p=',i2,') potential with   DSCM=', F11.4,'   REQ=',
      1 F11.8,'   and exponent'/8x,'coefficient power series of order',
-     2 i3,' for  r < Re','  and',i3,' for  r >= Re'/3x,'Generate   A(DEL
+     2 I4,' for  r < Re','  and',I4,' for  r >= Re'/3x,'Generate   A(DEL
      3R)=',1Pd17.9,'   B(DELR)=',D17.9/6x,'where ULR defined by',I2,
      4 " inverse-power terms with coeffts (+'ve repulsive):"/
      5 (5x,3(5x,'C',0P,i2,' =',1Pd14.6:)))
-  652 FORMAT(3x,'Exponent defined by',I3,' expansion coefficients:',6x,
+  652 FORMAT(3x,'Exponent defined by',I4,' expansion coefficients:',6x,
      1 'phi(',i2,')=',1PD17.10/(2x,3(3x,'phi(',0P,i2,')=',1PD15.8:)))
   654 FORMAT(3x,'U_{LR} term uses Tang-Toennies damping function [JCP 80
      1,3726(1984)]'/10x,'[1 - exp(-RHOd*r)*SUM{(RHOd*r)^k/k!}]',
