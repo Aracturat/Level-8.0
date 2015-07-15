@@ -3347,6 +3347,7 @@ c++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      4        WF(N),SB,SI,SM,SN,SNEND,SPNEND,SRTGI,SRTGN,SWR(20),
      5        V(N),VLIM,VMAX,VMX,VPR,
      6        WKBTST,XEND,XPR,XPW,DXPW,Y1,Y2,Y3,YIN,YM,YOUT
+	  CHARACTER*25 KVSTR
       DATA RATST/1.D-9/,XPW/20.72d0/
       DATA NDN/15/
 c++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -3733,6 +3734,13 @@ c  J=JROT , beginning at mesh point NBEG & distance RSTT where
 c  the NPR values written separated by mesh step RINC=JPSIQ*RH
           WRITE(10,701) KV,JROT,EO,NPR,RSTT,RINC,NBEG,JPSIQ
           WRITE(10,702) (RMINN+I*RH,WF(I),I=NBEG,NEND,JPSIQ)
+c** Create directory WFs if it doesn't exist
+		  CALL system('mkdir WFs > nul 2> nul')
+c** Write wave function to file WFs/WF_<KV>.dat
+		  WRITE(KVSTR, 704) KV
+		  OPEN(UNIT = 40, FILE = TRIM(KVSTR))
+		  WRITE(40,705) (RMINN+I*RH, WF(I),I=NBEG,NEND,JPSIQ)		  
+		  CLOSE(40)
           GO TO 140
           ENDIF
 c** Print solutions every  LPRWF-th  point, 6 to a line, in columns.
@@ -3814,6 +3822,8 @@ c** Return in error mode
      1ion at',I6,' points.'/7x,'R(1-st)=',F12.8,'   mesh=',F12.8,
      2  '   NBEG=',I4,'   |LPRWF|=',I4)
   702 FORMAT((1X,4(f9.4,f10.6)))
+  704 FORMAT(('WFs/WF_',I5.5,'.dat'))
+  705 FORMAT(f9.4,f10.6)  
       END
 c23456789 123456789 123456789 123456789 123456789 123456789 123456789 12
 
