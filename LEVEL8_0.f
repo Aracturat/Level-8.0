@@ -29,7 +29,7 @@ c***** Main calling and I/O routines.  Last Updated  8 April 2007 *****
 c----------------------------------------------------------------------
 c** Dimension for  potential arrays  and  vib. level arrays.
       INTEGER NDIMR,VIBMX,MORDRMX,RORDR,NTPMX
-      PARAMETER (NDIMR=80001, VIBMX=4000,RORDR=7,MORDRMX=20,NTPMX= 16000)
+      PARAMETER (NDIMR=999001,VIBMX=4000,RORDR=7,MORDRMX=20,NTPMX=16000)
 c
       INTEGER I,J,M,III,IJD,ILEV1,ILEV2,IOMEG1,IOMEG2,INNOD1,INNOD2,
      1 INNER,SINNER,IQT,IWR,IRFN,IVD,IVS,IAN1,IAN2,IMN1,IMN2,GEL1,GEL2,
@@ -1453,7 +1453,7 @@ c  Authors: R.J. Le Roy & J. Tellinghuisen         Version of 30/09/1999
 c+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 c** Dimension:  potential arrays  and  vib. level arrays.
       INTEGER NDMINT
-      PARAMETER (NDMINT= 80001)
+      PARAMETER (NDMINT= 999001)
       INTEGER I,M,IPASS,M1,M2,NBEG,NEND,WARN
       REAL*8 V(NEND),WF0(NEND),RM2(NEND),P(NDMINT),WF1(NDMINT),
      1                                            WF2(NDMINT),RCNST(7)
