@@ -29,7 +29,7 @@ c***** Main calling and I/O routines.  Last Updated  8 April 2007 *****
 c----------------------------------------------------------------------
 c** Dimension for  potential arrays  and  vib. level arrays.
       INTEGER NDIMR,VIBMX,MORDRMX,RORDR,NTPMX
-      PARAMETER (NDIMR=80001, VIBMX=4000,RORDR=7,MORDRMX=20,NTPMX= 1600)
+      PARAMETER (NDIMR=80001, VIBMX=4000,RORDR=7,MORDRMX=20,NTPMX= 16000)
 c
       INTEGER I,J,M,III,IJD,ILEV1,ILEV2,IOMEG1,IOMEG2,INNOD1,INNOD2,
      1 INNER,SINNER,IQT,IWR,IRFN,IVD,IVS,IAN1,IAN2,IMN1,IMN2,GEL1,GEL2,
@@ -4249,7 +4249,7 @@ c++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 c** Set maximum array dimension for the input function values to be
 c  interpolated over & extrapolated beyong
       INTEGER NTPMX
-      PARAMETER (NTPMX= 1600) 
+      PARAMETER (NTPMX= 16000) 
       INTEGER I,J,IAN1,IAN2,IMN1,IMN2,INPTS,ILR,IR2,JWR,LNPT,LPPOT,LWR,
      1  NCN,NLIN,NPP,NROW,NTP,NUSE, OMEGA
       REAL*8  RFACT,EFACT,RH,RMIN,VLIM,VSHIFT,VV(NPP),RR(NPP),RM2(NPP),
@@ -5065,7 +5065,7 @@ c** Assumes both R1(J) & XX(I) are monotonic increasing.
 c+++++ Calls only subroutines SPLINE and PLYINTRP ++++++++++++++++++++++
 c=======================================================================
       INTEGER MAXSP
-      PARAMETER (MAXSP=6400)
+      PARAMETER (MAXSP=64000)
       INTEGER  I,IER,I1ST,IDER,JK,K,KK,LNPT,N2,N3,NIPT,NTP,MBEG,MEND
       REAL*8 EPS,R2,RI,RRR,TTMP,R1(NTP),V1(NTP),CSP(MAXSP),
      1  YY(MEND),XX(MEND)
